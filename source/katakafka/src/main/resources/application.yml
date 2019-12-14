@@ -1,0 +1,10 @@
+message:
+  topic:
+    name: vm
+  group:
+    name: group1
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+  consumer:
+    group-id: group1
