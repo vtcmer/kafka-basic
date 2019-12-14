@@ -3,7 +3,7 @@ It is a simple **Kafka** example and explication  how **Kafka** works.
 
 This example has two parts:
     1) **doc**: A explication about the main concepts for start with **Kafka**.
-    2) **source**: Sprig-boot project with a example.
+    2) **source**: Sprig-boot project with an basic example.
 
 ### 1. Main Kafka command
 
