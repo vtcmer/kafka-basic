@@ -1,0 +1,36 @@
+
+spring:
+  kafka:
+    #client-id: ztt
+    bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+    template:
+      default-topic: input-topic
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: random-consumer
+      #auto-offset-reset: earliest
+      auto-offset-reset: latest
+      #enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+---
+kafka:
+  topic:
+    input: input-topic
+    even-output: square-output
+    extractor: m30-camera
+    extractor-output: m30-camera-output
+
+---
+
+extractor:
+  scheduled:
+    time : 10000
+  cameras:
+    url: http://www.mc30.es/components/com_hotspots/datos/camaras.xml
